@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-// import EditNote from './EditNote';
 import { useDispatch } from 'react-redux';
 import { deleteNote } from '../slice/appSlice';
+import EditNote from './EditNote';
 
 function SingleNote(props) {
   const dispatch = useDispatch();
@@ -29,6 +29,7 @@ function SingleNote(props) {
           <h6>{props.user.title}</h6>
 
           <span className="icons">
+            <EditNote user={props.user} editNote={props.editNote} />
             <span
               className="material-symbols-outlined"
               style={{
@@ -44,8 +45,7 @@ function SingleNote(props) {
             </span>
           </span>
         </div>
-        <div className="postitBody" style={{}}>
-          <p>{props.user.date}</p>
+        <div className="postitBody" style={{ position: 'relative' }}>
           <span
             style={{
               fontWeight: bold ? 'normal' : 700,
@@ -56,6 +56,9 @@ function SingleNote(props) {
           >
             {props.user.notetext}
           </span>
+          <p style={{ position: 'absolute', bottom: 0, fontStyle: 'italic' }}>
+            {props.user.date}
+          </p>
         </div>
         <div className="postitFooter">
           <button
