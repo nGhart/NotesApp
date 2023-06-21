@@ -45,18 +45,17 @@ const AddNote = () => {
         onClick={handleShow}
         className="addButton"
         style={{
-          position: 'fixed',
+          position: 'absolute',
           right: 0,
-          bottom: '20%',
+          bottom: '50%',
           margin: '15px',
           marginRight: '8px',
-          width: '50px',
-          height: '50px',
+          width: '60px',
+          height: '60px',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: 'deeppink',
-          // backgroundColor: 'rgb(11, 64, 73)',
+          backgroundColor: 'rgb(213, 118, 134)',
           border: 'none',
           borderRadius: '50%',
         }}
@@ -77,8 +76,19 @@ const AddNote = () => {
         keyboard={false}
         centered
       >
+        <Modal.Header
+          style={{ backgroundColor: 'rgb(249, 238, 239)' }}
+          closeButton
+        >
+          <Modal.Title>Add Note</Modal.Title>
+        </Modal.Header>
         <Form
-          style={{ width: '100%', minHeight: '300px', padding: '10px' }}
+          style={{
+            width: '100%',
+            minHeight: '300px',
+            padding: '10px',
+            backgroundColor: 'rgb(249, 238, 239)',
+          }}
           onSubmit={handleSubmit}
         >
           <Form.Group
@@ -94,7 +104,7 @@ const AddNote = () => {
             <Form.Control
               type="text"
               placeholder="Note Title"
-              maxLength={20}
+              maxLength={25}
               name="title"
               value={state.title}
               onChange={handleChange}
