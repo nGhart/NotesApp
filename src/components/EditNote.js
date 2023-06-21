@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { editNote } from '../slice/appSlice';
+import { editNote } from '../slice/appSlice';
 import { Modal, Form, Button } from 'react-bootstrap';
 
 const EditNote = (props) => {
@@ -42,7 +42,7 @@ const EditNote = (props) => {
       <Modal
         show={show}
         onHide={handleClose}
-        backdrop="static"
+        // backdrop="static"
         keyboard={false}
         centered
       >
@@ -54,7 +54,7 @@ const EditNote = (props) => {
           }}
           onSubmit={handleEdit}
         >
-          <h1>edit</h1>
+          <p>Edit Note</p>
           <Form.Group
             className="mb-3"
             controlId="formBasicEmail"
@@ -68,7 +68,7 @@ const EditNote = (props) => {
             <Form.Control
               type="text"
               placeholder="Note Title"
-              maxLength={20}
+              maxLength={25}
               name="title"
               value={notes.title}
               onChange={handleChange}
