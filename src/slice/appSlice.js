@@ -17,14 +17,15 @@ const noteSlice = createSlice({
         }
       });
     },
-    // editNote: (state, action) => {
-    //   state.notes = state.notes.map((item) => {
-    //     if (item.id === action.payload.id) {
-    //       return action.payload.newNote;
-    //     }
-    //     return item;
-    //   });
-    // },
+    editNote: (state, action) => {
+      state.notes = state.notes.map((item) => {
+        if (item.id === action.payload.id) {
+          return action.payload.newNote;
+        }
+        return item;
+      });
+      state.notes = [...state.notes];
+    },
   },
 });
 export const { addNote, deleteNote, editNote } = noteSlice.actions;
