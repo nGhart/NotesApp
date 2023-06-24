@@ -58,6 +58,7 @@ const AddNote = () => {
           backgroundColor: 'rgb(213, 118, 134)',
           border: 'none',
           borderRadius: '50%',
+          zIndex: 5,
         }}
       >
         <span
